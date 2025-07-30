@@ -8,23 +8,32 @@
     <title>Blog: Project Debut | RobertRFG.com</title>
 </head>
 <body>
-    <div class="responsive_warning">
-        <h4>You are viewing this page from a phone or tablet. I did what I could to optimize my site for your device, but I cannot guarantee full compatibility.</h4>
-    </div>
-    <div class="nav_header">
+    <div class="navbar native">
         <div class="container">
-            <div class="col50">
-                <h2><a href="https://robertrfg.com/" target="_blank">RobertRFG</a></h2>
+            <div class="col25">
+                <button><a href="https://robertrfg.com/">RobertRFG.com</a></button>
             </div>
-            <div class="col50 right">
+            <div class="col50 center">
+                <button><a href="../../../../projects">Projects</a></button><button><a href="../../../../blog">Blog</a></button><button><a href="../../../../support">Support</a></button>
+            </div>
+            <div class="col25 right">
                 <button><a href="https://robertrfg.gumroad.com/" target="_blank">Store</a></button>
             </div>
         </div>
     </div>
-    <div class="navbar">
-        <div class="container">
-            <button><a href="https://robertrfg.com/">Home</a></button><button><a href="../../../../projects">Projects</a></button><button><a href="../../../../blog">Blog</a></button><button><a href="../../../../contact">Contact</a></button>
+    <div class="navbar responsive">
+        <div class="col75">
+            <button><a href="https://robertrfg.com/">RobertRFG.com</a></button>
         </div>
+        <div class="col25 right">
+            <button class="dropdown_button"><img src="../../../../assets/img/menu.svg" alt="menu" class="icon"></button>
+        </div>
+    </div>
+    <div class="navbar_menu">
+        <a href="../../../../projects">Projects</a>
+        <a href="../../../../blog">Blog</a>
+        <a href="../../../../support">Support</a>
+        <a href="https://robertrfg.gumroad.com/" target="_blank">Store</a>
     </div>
     <div class="body">
         <div class="container">
@@ -48,20 +57,19 @@
             <br>
             <p>I have over 170 hours in Ground Branch; thus, I have plenty of experience with everything the game has to offer, and frankly speaking, it has a whole myriad of issues. Firstly, it's the fact Ground Branch operates on the idea of "quantity over quality." This leads to the game having a lot of content but little substance. This can be seen all over the game, but to demonstrate my point, let's look at how many weapons the game has to offer. In Ground Branch, you, the player, can choose from over 40 firearms ranging from SMGs to shotguns to assault rifles and more; however, if you ever tried playing with a few weapons from each category, you start to notice how painfully the same the experience is no matter what you choose. If you play with one SMG, you played with them all; if you play with one AK, you played with them all; if you play with one assault rifle, you played with them all. And that is the exact issue I want to avoid with my game. I plan on having fewer weapons to choose from, but I want each weapon to feel unique. "Quality over quantity," if you will. I only used weapons as an example here, but the same logic applies for everything else, like bugs; Ground Branch is notorious for how buggy it is. Whether that be doors that either can't be opened or immediately close by themselves upon opening, whether it be weapons that can't be reloaded, ladders that no-clip the player through the map, atrocious AI, or whatever else. I have experienced them all myself firsthand and found most of them stem from the developers' "quantity over quality" approach. BlackFoot Studios is so preoccupied with adding new content that most major bugs are left unattended for years. My idea to fix this is frequently releasing small patches that only add one or two new things, allowing for easier testing and troubleshooting. And only once the current issues have been resolved will I proceed on adding new content. Again, "quality over quantity." And this is not to say Ground Branch is a bad game, per se; as noted at the beginning of this paragraph, I have over 170 hours in Ground Branch, which is a lot, and I wouldn't have invested nearly as much time if I didn't find the game to be at least a little bit fun... When it works, that is.</p>
             <br>
-            <p>And with that, I believe we can bring this article to a close. A thing to note is that I started development on my game only a few months ago, meaning it's all still in very early development and many things are subject to change over time; however, this is like the core idea of what I want to eventually achieve, I guess. I am always open for suggestions and constructive criticism, so if you have any of that, feel free to reach out <a href="../../../../contact">here</a>.</p>
+            <p>And with that, I believe we can bring this article to a close. A thing to note is that I started development on my game only a few months ago, meaning it's all still in very early development and many things are subject to change over time; however, this is like the core idea of what I want to eventually achieve, I guess. I am always open for suggestions and constructive criticism, so if you have any of that, feel free to reach out <a href="../../../../support">here</a>.</p>
             <br>
             <p>Until next time, cheers! :3</p>
             <br>
-            <img src="img/goofy_gato.webp" alt="goofy_gato">
+            <div class="image_frame">
+                <img src="img/goofy_gato.webp" alt="goofy_gato">
+            </div>
         </div>
     </div>
-    <div class="footer">
-        <div class="col50">
-            <p>&copy; <span id="copyright"></span> | <a href="https://robertrfg.com/" target="_blank">RobertRFG.com</a></p>
-        </div>
-        <div class="col50 right">
-            <p><a href="../../../../legal">Legal</a> | <a href="../../../../kudos">Kudos</a></p>
-        </div>
+    <div class="footer center">
+        <p>&copy; <span id="copyright"></span> | <a href="https://robertrfg.com/" target="_blank">RobertRFG.com</a></p>
+        <br>
+        <p><a href="legal">Legal</a> | <a href="kudos">Kudos</a></p>
     </div>
 
     <script src="../../../../assets/js/index.js"></script>

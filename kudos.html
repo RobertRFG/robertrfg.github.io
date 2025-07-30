@@ -8,40 +8,49 @@
     <title>Kudos | RobertRFG.com</title>
 </head>
 <body>
-    <div class="responsive_warning">
-        <h4>You are viewing this page from a phone or tablet. I did what I could to optimize my site for your device, but I cannot guarantee full compatibility.</h4>
-    </div>
-    <div class="nav_header">
+    <div class="navbar native">
         <div class="container">
-            <div class="col50">
-                <h2><a href="https://robertrfg.com/" target="_blank">RobertRFG</a></h2>
+            <div class="col25">
+                <button><a href="https://robertrfg.com/">RobertRFG.com</a></button>
             </div>
-            <div class="col50 right">
+            <div class="col50 center">
+                <button><a href="projects">Projects</a></button><button><a href="blog">Blog</a></button><button><a href="support">Support</a></button>
+            </div>
+            <div class="col25 right">
                 <button><a href="https://robertrfg.gumroad.com/" target="_blank">Store</a></button>
             </div>
         </div>
     </div>
-    <div class="navbar">
-        <div class="container">
-            <button><a href="https://robertrfg.com/">Home</a></button><button><a href="projects">Projects</a></button><button><a href="blog">Blog</a></button><button><a href="contact">Contact</a></button>
+    <div class="navbar responsive">
+        <div class="col75">
+            <button><a href="https://robertrfg.com/">RobertRFG.com</a></button>
         </div>
+        <div class="col25 right">
+            <button class="dropdown_button"><img src="assets/img/menu.svg" alt="menu" class="icon"></button>
+        </div>
+    </div>
+    <div class="navbar_menu">
+        <a href="projects">Projects</a>
+        <a href="blog">Blog</a>
+        <a href="support">Support</a>
+        <a href="https://robertrfg.gumroad.com/" target="_blank">Store</a>
     </div>
     <div class="body">
         <div class="container">
             <h1>Kudos</h1>
             <br>
-            <p>It's hard to juggle making a game, running a website, and managing a personal life all at once. That's why none of this would be possible without the works of these amazing individuals! I give my sincerest kudos to everyone listed here. :D</p>
+            <p>This website wouldn't have been possible without these 3rd-party assets; thus, I give my sincerest kudos to everyone listed here. :D</p>
             <br>
-            <p><b>Be Vietnam Pro</b> by <b>Lâm Bảo</b>, <b>Tony Le</b>, and <b>Việt Anh Nguyễn</b> - This is the main font used on my website!</p>
+            <ul>
+                <li><b>Be Vietnam Pro</b> by <b>Lâm Bảo</b>, <b>Tony Le</b>, and <b>Việt Anh Nguyễn</b> - The font used on my website!</li>
+                <li><b>Bootstrap Icons</b> by <b>Bootstrap</b> - This is the main icon theme used on my website!</li>
+            </ul>
         </div>
     </div>
-    <div class="footer">
-        <div class="col50">
-            <p>&copy; <span id="copyright"></span> | <a href="https://robertrfg.com/" target="_blank">RobertRFG.com</a></p>
-        </div>
-        <div class="col50 right">
-            <p><a href="legal">Legal</a> | <a href="kudos">Kudos</a></p>
-        </div>
+    <div class="footer center">
+        <p>&copy; <span id="copyright"></span> | <a href="https://robertrfg.com/" target="_blank">RobertRFG.com</a></p>
+        <br>
+        <p><a href="legal">Legal</a> | <a href="kudos">Kudos</a></p>
     </div>
 
     <script src="assets/js/index.js"></script>

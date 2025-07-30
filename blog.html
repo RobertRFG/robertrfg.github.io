@@ -8,40 +8,47 @@
     <title>Blog | RobertRFG.com</title>
 </head>
 <body>
-    <div class="responsive_warning">
-        <h4>You are viewing this page from a phone or tablet. I did what I could to optimize my site for your device, but I cannot guarantee full compatibility.</h4>
-    </div>
-    <div class="nav_header">
+    <div class="navbar native">
         <div class="container">
-            <div class="col50">
-                <h2><a href="https://robertrfg.com/" target="_blank">RobertRFG</a></h2>
+            <div class="col25">
+                <button><a href="https://robertrfg.com/">RobertRFG.com</a></button>
             </div>
-            <div class="col50 right">
+            <div class="col50 center">
+                <button><a href="projects">Projects</a></button><button><a href="blog">Blog</a></button><button><a href="support">Support</a></button>
+            </div>
+            <div class="col25 right">
                 <button><a href="https://robertrfg.gumroad.com/" target="_blank">Store</a></button>
             </div>
         </div>
     </div>
-    <div class="navbar">
-        <div class="container">
-            <button><a href="https://robertrfg.com/">Home</a></button><button><a href="projects">Projects</a></button><button><a href="blog">Blog</a></button><button><a href="contact">Contact</a></button>
+    <div class="navbar responsive">
+        <div class="col75">
+            <button><a href="https://robertrfg.com/">RobertRFG.com</a></button>
         </div>
+        <div class="col25 right">
+            <button class="dropdown_button"><img src="assets/img/menu.svg" alt="menu" class="icon"></button>
+        </div>
+    </div>
+    <div class="navbar_menu">
+        <a href="projects">Projects</a>
+        <a href="blog">Blog</a>
+        <a href="support">Support</a>
+        <a href="https://robertrfg.gumroad.com/" target="_blank">Store</a>
     </div>
     <div class="body">
         <div class="container">
             <h1>Blog</h1>
             <br>
             <p>Just a simple hub for news, updates, devlogs, as well as my thoughts and opinions on a plethora of random topics.</p>
-            <br>
+            <br><br>
+            <p><a href="post/2025/7/devlog_updates_and_more/">Devlog, Updates, And More | 30/07/2025</a></p>
             <p><a href="post/2025/6/project_debut/">Project Debut | 18/06/2025</a></p>
         </div>
     </div>
-    <div class="footer">
-        <div class="col50">
-            <p>&copy; <span id="copyright"></span> | <a href="https://robertrfg.com/" target="_blank">RobertRFG.com</a></p>
-        </div>
-        <div class="col50 right">
-            <p><a href="legal">Legal</a> | <a href="kudos">Kudos</a></p>
-        </div>
+    <div class="footer center">
+        <p>&copy; <span id="copyright"></span> | <a href="https://robertrfg.com/" target="_blank">RobertRFG.com</a></p>
+        <br>
+        <p><a href="legal">Legal</a> | <a href="kudos">Kudos</a></p>
     </div>
 
     <script src="assets/js/index.js"></script>

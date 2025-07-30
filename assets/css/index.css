@@ -4,8 +4,8 @@
 }
 
 ::selection {
-    background: #1a1a1a;
-    color: #f1f1f1;
+    background: #99003d65;
+    color: inherit;
 }
 
 * {
@@ -41,7 +41,7 @@ h3 {
     font-size: 1.75rem;
 }
 
-p {
+p, ul, ol {
     font-size: 1.2rem;
 }
 
@@ -51,7 +51,6 @@ h4 {
 
 ul, ol {
     margin-left: 2.5rem;
-    font-size: 1.2rem;
 }
 
 hr {
@@ -68,10 +67,11 @@ a {
 }
 
 button {
-    background: #f1f1f1;
-    border: 0.1rem solid #1a1a1a;
+    background: transparent;
+    border: 0.15rem solid #1a1a1a;
     color: #1a1a1a;
-    padding: 0.85rem 1.15rem 0.85rem 1.15rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border-radius: 10rem;
     font-size: 1.1rem;
     cursor: pointer;
 }
@@ -81,15 +81,70 @@ button:hover {
     color: #f1f1f1;
 }
 
-button a, button a:hover, .nav_header a, .nav_header a:hover, .footer a, .footer a:hover {
+button:hover .icon, button:focus .icon {
+    filter: invert(100%) sepia(42%) saturate(176%) hue-rotate(279deg) brightness(113%) contrast(89%);
+}
+
+button a, button a:hover, .footer a, .footer a:hover {
     color: inherit;
     text-decoration: none;
 }
 
 img {
+    width: 100%;
     vertical-align: middle;
     user-select: none;
     height: auto;
+}
+
+.icon {
+    width: 1.1em;
+    filter: invert(0%) sepia(19%) saturate(6981%) hue-rotate(31deg) brightness(94%) contrast(80%);
+}
+
+.image_frame {
+    width: 75%;
+    position: relative;
+    padding: 1.75rem;
+    background: radial-gradient(ellipse at center, #CD853F 0%, #8B4513 70%), repeating-linear-gradient(45deg, transparent, transparent 0.25rem, #8b451326 0.25rem, #8b451326 0.45rem);
+    box-shadow: inset 0 0 2rem #00000066, inset 0 0 4rem #8b45134d, 0 1rem 1.65rem #00000066, 0 0.45rem 1rem #0000004d;
+    border: 0.25rem solid #654321;
+    border-radius: 0.5rem;
+}
+
+.image_frame::before {
+    content: "";
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    right: 0.75rem;
+    bottom: 0.75rem;
+    background: linear-gradient(45deg, #8B4513 0%, #A0522D 25%, #D2691E 50%, #CD853F 75%, #8B4513 100%);
+    border: 0.2rem solid #4a2c17;
+    border-radius: 0.35rem;
+    box-shadow: inset 0 0 1.2rem #00000080;
+}
+
+.image_frame::after {
+    content: "";
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    background: #1a0f0a;
+    border-radius: 0.2rem;
+    box-shadow: inset 0 0 0.5rem #000000e6;
+}
+
+.image_frame img {
+    position: relative;
+    z-index: 1;
+    border-radius: 0.2rem;
+}
+
+.image_frame#small {
+    width: 35%;
 }
 
 .container {
@@ -108,6 +163,12 @@ img {
     float: left;
 }
 
+.col33 {
+    padding: 0 0.5rem 0 0.5rem;
+    width: 33%;
+    float: left;
+}
+
 .col50 {
     width: 50%;
     float: left;
@@ -120,7 +181,7 @@ img {
 
 .col100 {
     width: 100%;
-    display: block;
+    float: left;
 }
 
 .center {
@@ -131,24 +192,15 @@ img {
     text-align: right;
 }
 
-.nav_header {
-    padding: 1.5rem 0 1.5rem 0;
-}
-
 .navbar {
-    border-top: 0.1rem solid #1a1a1a;
     border-bottom: 0.1rem solid #1a1a1a;
-    text-align: center;
 }
 
 .navbar button {
-    border-top: 0;
-    border-bottom: 0;
-    border-right: 0;
-}
-
-.navbar button:last-of-type {
-    border-right: 0.1rem solid #1a1a1a;
+    border: none;
+    padding: 0.85rem 1.15rem 0.85rem 1.15rem;
+    border-radius: 0;
+    display: inline;
 }
 
 .body {
@@ -158,43 +210,127 @@ img {
 .footer {
     background: #1a1a1a;
     color: #f1f1f1;
-    padding: 2rem;
+    padding: 2rem 0 2rem 0;
     margin-top: auto;
 }
 
-.responsive_warning {
-    background: #eb3131;
-    color: #f1f1f1;
-    padding: 0.5rem;
+.responsive {
     display: none;
 }
 
-@media screen and (max-width: 32.5rem) {
-    .container {
-        width: 90%;
-    }
-    .footer .col50 {
-        width: 100%;
-        margin: 0.75rem 0 0.75rem 0;
-        text-align: center;
-    }
-    .footer .col50:first-of-type {
-        margin-top: 0;
-    }
-    .footer .col50:last-of-type {
-        margin-bottom: 0;
-    }
-    .responsive_warning {
-        display: block;
-    }
+.navbar_menu {
+    background: #f1f1f1;
+    border-bottom: 0.1rem solid #1a1a1a;
+    padding: 2rem 0 2rem 0;
+    margin-top: -0.1rem;
+    text-align: center;
+    display: none;
 }
 
-@media screen and (max-width: 26.875rem) {
-    img {
-        width: 75%;
+.navbar_menu a {
+    margin: 1rem 0 1rem 0;
+    display: block;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.card {
+    background: #b3b3b3;
+    padding: 1rem;
+    border-radius: 1rem;
+    width: 100%;
+}
+
+.card button {
+    border: 0.15rem solid #f1f1f1;
+    color: #f1f1f1;
+}
+
+.card button:hover {
+    background: #f1f1f1;
+}
+
+.card#blue {
+    background: #004d99;
+    color: #f1f1f1;
+}
+
+.card#blue button:hover {
+    color: #004d99;
+}
+
+.card#green {
+    background: #257425;
+    color: #f1f1f1;
+}
+
+.card#green button:hover {
+    color: #257425;
+}
+
+.card#magenta {
+    background: #99003d;
+    color: #f1f1f1;
+}
+
+.card#magenta button:hover {
+    color: #99003d;
+}
+
+.card#blue ::selection, .card#green ::selection, .card#magenta ::selection {
+    background: #1a1a1a65;
+}
+
+.code {
+    display: flex;
+}
+
+.code #line {
+    background: #004d99;
+    color: #f1f1f1;
+    padding: 1rem;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    width: 5%;
+    text-align: center;
+}
+
+.code #code {
+    background: #1a0f0a;
+    color: #f1f1f1;
+    padding: 1rem;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    width: 95%;
+}
+
+.code #code #el {
+    color: #0080ff;
+}
+
+.code #code #div {
+    color: #e68a00;
+}
+
+.code #code #id {
+    color: #ff3377;
+}
+
+.code #code #comment {
+    color: #008000;
+}
+
+.code ::selection {
+    background: #f1f1f165;
+    color: #1a1a1a;
+}
+
+@media screen and (max-width: 32.5rem) {
+    .native {
+        display: none;
     }
-    .navbar button {
-        font-size: 0.9rem;
+    .responsive {
+        display: block;
     }
     h1 {
         font-size: 2.35rem;
@@ -205,7 +341,28 @@ img {
     h3 {
         font-size: 1.4rem;
     }
-    p {
+    p, ul, ol {
         font-size: 1rem;
+    }
+    li {
+        margin: 0.5rem 0 0.5rem 0;
+    }
+    .image_frame, .image_frame#small, .col25, .col33, .col50, .col75 {
+        width: 100%;
+    }
+    .container, .code #code {
+        width: 90%;
+    }
+    .col33 {
+        padding: 0.5rem 0 0.5rem 0;
+    }
+    .navbar .col25 {
+        width: 25%;
+    }
+    .navbar .col75 {
+        width: 75%;
+    }
+    .code #line {
+        width: 10%;
     }
 }

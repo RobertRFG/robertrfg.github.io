@@ -1,33 +1,60 @@
+/*
+
+GENERAL NOTES:
+
+- "N" - number.
+- "N N N N" - "top, right, bottom, left."
+- I use "rem" instead of "px," as that is a more responsive-friendly measurement unit.
+- "Native" either refers to the desktop view of the website or the default value/look/property/etc., while "responsive" refers to, well, the responsive view.
+- Comments serve more as bookmarks or "folders" than code explanations.
+- Definitions may not be 100% textbook accurate; rather, they're mostly "accurate enough." Again, bookmarks > explanations.
+- All code was written by me (@rndm_furry_guy on YouTube & X) with EXTREMELY minor help from Claude.ai.
+- The target audience is me and potentially someone who wants to figure out the general functionality of this code (not specifically learn the code or CSS).
+
+*/
+
+/* Custom font. */
+
 @font-face {
-    font-family: "bvp";
-    src: url("../../assets/fnt/be_vietnam_pro.ttf");
+    font-family: "bvp"; /* Declaring custom font family name. "BVP" is short for "Be Vietnam Pro." */
+    src: url("../../assets/fnt/be_vietnam_pro.ttf"); /* Pulls the .ttf font file from my assets directory. */
 }
+
+/* Custom text selection. */
 
 ::selection {
     background: #99003d65;
-    color: inherit;
+    color: inherit; /* Prevents changing the selected text color when that text is, well, selected. */
 }
+
+/* Default website properties. */
 
 * {
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
-    font-family: "bvp";
-    font-weight: normal;
-    scroll-behavior: smooth;
+    box-sizing: border-box; /* Allows the element's padding and border to be included in its width and height. */
+    font-family: "bvp"; /* Applies the custom font family from "@font-face". */
+    font-weight: normal; /* Headers are, by default, bold. This line makes sure that all text, including headers, isn't bolded. */
+    scroll-behavior: smooth; /* Makes sure that automatic scrolling, like anchor points, is smooth instead of snappy. */
 }
+
+/* Default page and element(s) properties. */
 
 body {
     background: #f1f1f1;
     color: #1a1a1a;
-    min-height: 100vh; 
-    display: flex;
-    flex-direction: column;
+    min-height: 100vh; /* Sets a minimum height for the whole body of the website (not the website itself; that's "*"). Without this, the minimum height of the page would be as high as the page's content makes it, which isn't what I want if I want to set the footer to always be at the bottom. "100vh" is basically "100% of the page." */
+    display: flex; /* Allows me to dynamically stack elements. */
+    flex-direction: column; /* Defines in which direction (horizontal or vertical) the elements will be stacked in. In this case, it's vertical. */
 }
 
+/* Sets native bold element value. */
+
 b {
-    font-weight: bold;
+    font-weight: bold; /* In the "*" I negated the bold styling for all elements. Here, I enforce it strictly for the <b> element. */
 }
+
+/* Sets the header, paragraph, and list elements ("ul" and "ol") font sizes. */
 
 h1 {
     font-size: 2.75rem;
@@ -49,9 +76,18 @@ h4 {
     font-size: 1rem;
 }
 
+/* Sets the left margin of both list elements ("ul" and "ol"). */
+
 ul, ol {
     margin-left: 2.5rem;
 }
+
+/* Adds spacing between list elements for a less cluttered overall look. */
+li {
+    margin: 0.5rem 0 0.5rem 0;
+}
+
+/* Horizontal divider styling. */
 
 hr {
     background: transparent;
@@ -59,12 +95,16 @@ hr {
     border-top: 0.1rem solid #b3b3b3;
 }
 
+/* Link element styling. */
+
 a {
     color: #1a1a1a;
-    text-underline-offset: 0.15rem;
-    text-decoration-thickness: 0.1rem;
-    cursor: pointer;
+    text-underline-offset: 0.15rem; /* Distance between text and underline. */
+    text-decoration-thickness: 0.1rem; /* The underline is the "text-decoration." */
+    cursor: pointer; /* What cursor will be used when the user interacts (in this case hovers) over the element. */
 }
+
+/* Button element styling. */
 
 button {
     background: transparent;
@@ -76,45 +116,58 @@ button {
     cursor: pointer;
 }
 
+/* What happens when a button is hovered over? */
+
 button:hover {
     background: #1a1a1a;
     color: #f1f1f1;
 }
 
+/* What happens to any icon images when a button with said icons is hovered over or focused on (clicked, but not redirected)? */
+
 button:hover .icon, button:focus .icon {
-    filter: invert(100%) sepia(42%) saturate(176%) hue-rotate(279deg) brightness(113%) contrast(89%);
+    filter: invert(100%) sepia(42%) saturate(176%) hue-rotate(279deg) brightness(113%) contrast(89%); /* Used a CSS Filter Generator (https://codepen.io/sosuke/pen/Pjoqqp) to change the color of an icon without making a bunch of different versions of the same icon. Good for saving storage and reducing loading times. It's also easier to implement. */
 }
+
+/* Button and footer links styling. */
 
 button a, button a:hover, .footer a, .footer a:hover {
     color: inherit;
     text-decoration: none;
 }
 
+/* Image styling. */
+
 img {
     width: 100%;
     vertical-align: middle;
     user-select: none;
-    height: auto;
+    height: auto; /* Tells the browser to render the element at its native ratio based on its width (100%). Good for making sure the images don't look stretched or distorted. */
 }
+
+/* Icon image styling. Referenced by adding the "icon" class to the <img> element. */
 
 .icon {
     width: 1.1em;
-    filter: invert(0%) sepia(19%) saturate(6981%) hue-rotate(31deg) brightness(94%) contrast(80%);
+    filter: invert(0%) sepia(19%) saturate(6981%) hue-rotate(31deg) brightness(94%) contrast(80%); /* Changes the icon color from black (#000000) to a slightly lighter shade of black (#1a1a1a) for a softer tone. */
 }
+
+/* Custom image border styling. */
 
 .image_frame {
     width: 75%;
-    position: relative;
-    padding: 1.75rem;
-    background: radial-gradient(ellipse at center, #CD853F 0%, #8B4513 70%), repeating-linear-gradient(45deg, transparent, transparent 0.25rem, #8b451326 0.25rem, #8b451326 0.45rem);
-    box-shadow: inset 0 0 2rem #00000066, inset 0 0 4rem #8b45134d, 0 1rem 1.65rem #00000066, 0 0.45rem 1rem #0000004d;
-    border: 0.25rem solid #654321;
-    border-radius: 0.5rem;
+    position: relative; /* Allows me to use the "top, left, right, bottom" properties without affecting its surrounding elements. */
+    padding: 2rem;
+    background: radial-gradient(ellipse at center, #CD853F 0%, #8B4513 70%), repeating-linear-gradient(45deg, transparent, transparent 0.25rem, #8b451326 0.25rem, #8b451326 0.45rem); /* Gradient to simulate how light would refract from the glossed wood. */
+    box-shadow: inset 0 0 2rem #00000066, inset 0 0 4rem #8b45134d, 0 1rem 1.65rem #00000066, 0 0.45rem 1rem #0000004d; /* Used to simulate depth. */
+    border-radius: 0.5rem; /* Adds curved edges. */
 }
 
+/* Outer custom frame layer styling. */
+
 .image_frame::before {
-    content: "";
-    position: absolute;
+    content: ""; /* Basically, this allows me to insert the image into the actual image frame. */
+    position: absolute; /* Basically, this "lifts" the element from its static position, allowing for more precise positioning without affecting other elements. */
     top: 0.75rem;
     left: 0.75rem;
     right: 0.75rem;
@@ -124,6 +177,8 @@ img {
     border-radius: 0.35rem;
     box-shadow: inset 0 0 1.2rem #00000080;
 }
+
+/* Inner custom frame layer styling. */
 
 .image_frame::after {
     content: "";
@@ -137,20 +192,28 @@ img {
     box-shadow: inset 0 0 0.5rem #000000e6;
 }
 
+/* Custom frame image styling. */
+
 .image_frame img {
     position: relative;
-    z-index: 1;
+    z-index: 1; /* Makes sure the element will be shown above other content layer-wise. */
     border-radius: 0.2rem;
 }
+
+/* Custom smaller frame width property. Referenced by adding the "small" ID alongside the ".image_frame" class. */
 
 .image_frame#small {
     width: 35%;
 }
 
+/* Centers and restricts website content. Good for readability. */
+
 .container {
-    width: 75%;
-    margin: auto;
+    width: 85%;
+    margin: auto; /* Positions the element to the center. */
 }
+
+/* Clearfix. Ensures the parent element properly wraps around its floated child elements. P.S. Flexbox would be better to use, but I ain't fixin' what ain't broken. ¯\_(ツ)_/¯ */
 
 .container::after {
     content: "";
@@ -158,31 +221,37 @@ img {
     clear: both;
 }
 
+/* Sets column widths and floats. Compatible with 4 columns (col25), 3 columns (col33), 2 columns (col50), and one column (col75; can be paired with col25). */
+
 .col25 {
-    width: 25%;
-    float: left;
+    width: 25%; /* 1/4 of the page. */
+    float: left; /* Enables text and inline elements to wrap around the elements, allowing me to horizontally stack columns within their container or parent. */
 }
 
 .col33 {
     padding: 0 0.5rem 0 0.5rem;
-    width: 33%;
+    width: 33.33%; /* 1/3 of the page. */
     float: left;
 }
 
 .col50 {
-    width: 50%;
+    width: 50%; /* 1/2 of the page. */
     float: left;
 }
 
 .col75 {
-    width: 75%;
+    width: 75%; /* 0.75/1 of the page. */
     float: left;
 }
+
+/* Sets parent column widths and floats. */
 
 .col100 {
     width: 100%;
     float: left;
 }
+
+/* Allows assigning "center" or "right" classes to elements. Alternative to writing "style="text-align: center/right;" in HTML. */
 
 .center {
     text-align: center;
@@ -192,47 +261,63 @@ img {
     text-align: right;
 }
 
+/* Navigation bar styling. */
+
 .navbar {
     border-bottom: 0.1rem solid #1a1a1a;
 }
+
+/* Styling for all buttons within the navigation bar. */
 
 .navbar button {
     border: none;
     padding: 0.85rem 1.15rem 0.85rem 1.15rem;
     border-radius: 0;
-    display: inline;
+    display: inline; /* Makes sure elements that would, by default, each go on a new line are stacked horizontally. */
 }
 
+/* Adds spacing between the navigation bar and page content, and between page content and the footer. */
+
 .body {
-    padding: 4rem 0 2rem 0;
+    padding: 4rem 0 4rem 0;
 }
+
+/* Footer styling. */
 
 .footer {
     background: #1a1a1a;
     color: #f1f1f1;
     padding: 2rem 0 2rem 0;
-    margin-top: auto;
+    margin-top: auto; /* Aligns the footer to the bottom of the page even if there is no other content to push it there by default. */
 }
+
+/* Sets any elements with the class "responsive" to not be displayed if the screen width value is higher than the "max-width" value defined in the @media query. */
 
 .responsive {
     display: none;
 }
 
+/* Responsive navigation menu styling. */
+
 .navbar_menu {
     background: #f1f1f1;
     border-bottom: 0.1rem solid #1a1a1a;
     padding: 2rem 0 2rem 0;
-    margin-top: -0.1rem;
+    margin-top: -0.1rem; /* Moves the element just slightly above its native position to cover up the navigation's border-bottom so that it looks like it just extends it when opened. */
     text-align: center;
-    display: none;
+    display: none; /* Hides elements by default. */
 }
+
+/* Styling for all links within the responsive navigation menu. */
 
 .navbar_menu a {
     margin: 1rem 0 1rem 0;
-    display: block;
+    display: block; /* Makes sure elements that would, by default, stack horizontally, are stacked one per line. */
     text-decoration: none;
     font-size: 1.2rem;
 }
+
+/* Styling for elements with the "card" class. */
 
 .card {
     background: #dddddd;
@@ -241,14 +326,20 @@ img {
     width: 100%;
 }
 
+/* Styling for all buttons within the "card" class elements. */
+
 .card button {
     border: 0.15rem solid #f1f1f1;
     color: #f1f1f1;
 }
 
+/* What happens when the buttons within the "card" class elements are hovered over? */
+
 .card button:hover {
     background: #f1f1f1;
 }
+
+/* Defines custom background color and button color while hovered for all "card" class elements with the "blue" ID. */
 
 .card#blue {
     background: #004d99;
@@ -259,6 +350,8 @@ img {
     color: #004d99;
 }
 
+/* Defines custom background color and button color while hovered for all "card" class elements with the "green" ID. */
+
 .card#green {
     background: #257425;
     color: #f1f1f1;
@@ -267,6 +360,8 @@ img {
 .card#green button:hover {
     color: #257425;
 }
+
+/* Defines custom background color and button color while hovered for all "card" class elements with the "magenta" ID. */
 
 .card#magenta {
     background: #99003d;
@@ -277,32 +372,42 @@ img {
     color: #99003d;
 }
 
+/* Defines a custom text selection background color for all elements with the "card" class. */
+
 .card#blue ::selection, .card#green ::selection, .card#magenta ::selection {
     background: #1a1a1a65;
 }
+
+/* Added later; thus, this time I used flexbox to define the two columns used in my code preview window (first column = line numbers; second column = code). */
 
 .code {
     display: flex;
 }
 
+/* Styling for the line numbers column within my code preview window. */
+
 .code #line {
     background: #004d99;
     color: #f1f1f1;
     padding: 1rem;
-    border-top-left-radius: 0.5rem;
-    border-bottom-left-radius: 0.5rem;
+    border-top-left-radius: 0.5rem; /* Changes the border-radius (corner curvature) specifically for the top left corner. */
+    border-bottom-left-radius: 0.5rem; /* Changes the border-radius (corner curvature) specifically for the bottom left corner. */
     width: 5%;
     text-align: center;
 }
+
+/* Styling for the code column within my code preview window. */
 
 .code #code {
     background: #1a0f0a;
     color: #f1f1f1;
     padding: 1rem;
-    border-top-right-radius: 0.5rem;
-    border-bottom-right-radius: 0.5rem;
+    border-top-right-radius: 0.5rem; /* Same as before, just this time for the right corner curvatures. */
+    border-bottom-right-radius: 0.5rem; /* Same as before, just this time for the right corner curvatures. */
     width: 95%;
 }
+
+/* Code preview window color coding. */
 
 .code #code #el {
     color: #0080ff;
@@ -320,18 +425,25 @@ img {
     color: #008000;
 }
 
+/* Defines a custom text selection background color for all elements with the "code" class. */
+
 .code ::selection {
     background: #f1f1f165;
     color: #1a1a1a;
 }
 
+/* Media query. Used to dynamically change certain website properties if the condition(s) within the brackets are met. */
+
 @media screen and (max-width: 32.5rem) {
+    /* Ensures that all elements with the "native" class are hidden. One such element is the desktop navigation bar. */
     .native {
         display: none;
     }
+    /* Ensure that all elements with the "responsive" class are shown. One such element is the responsive navigation bar. */
     .responsive {
         display: block;
     }
+    /* Defines specific font sizes for headers, paragraphs, and lists on screens smaller than 32.5rem (~520px). */
     h1 {
         font-size: 2.35rem;
     }
@@ -344,24 +456,27 @@ img {
     p, ul, ol {
         font-size: 1rem;
     }
-    li {
-        margin: 0.5rem 0 0.5rem 0;
-    }
+    /* Ensures that all "image_frame" class elements, as well as columns, take up the maximum available page width. */
     .image_frame, .image_frame#small, .col25, .col33, .col50, .col75 {
         width: 100%;
     }
+    /* Slightly expands the "container" class to allow more text per line. Also, defines the new "code" ID element width. */
     .container, .code #code {
         width: 90%;
     }
+    /* Switched from left-and-right to top-and-bottom padding so the 33% columns are properly divided regardless of how they're stacked (horizontally or vertically). */
     .col33 {
         padding: 0.5rem 0 0.5rem 0;
     }
+    /* Defines specific width for all 25% columns within the navigation bar ("navbar" class). */
     .navbar .col25 {
         width: 25%;
     }
+    /* Defines specific width for all 75% columns within the navigation bar ("navbar" class). */
     .navbar .col75 {
         width: 75%;
     }
+    /* Adjusts the line numbers column to be compatible with the responsive 90% code column width. */
     .code #line {
         width: 10%;
     }

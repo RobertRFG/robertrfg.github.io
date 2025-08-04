@@ -209,7 +209,7 @@ img {
 /* Centers and restricts website content. Good for readability. */
 
 .container {
-    width: 85%;
+    width: 80%;
     margin: auto; /* Positions the element to the center. */
 }
 

@@ -41,8 +41,8 @@ GENERAL NOTES:
 /* Default page and element(s) properties. */
 
 body {
-    background: #f1f1f1;
-    color: #1a1a1a;
+    background: #1a1a1a;
+    color: #f1f1f1;
     min-height: 100vh; /* Sets a minimum height for the whole body of the website (not the website itself; that's "*"). Without this, the minimum height of the page would be as high as the page's content makes it, which isn't what I want if I want to set the footer to always be at the bottom. "100vh" is basically "100% of the page." */
     display: flex; /* Allows me to dynamically stack elements. */
     flex-direction: column; /* Defines in which direction (horizontal or vertical) the elements will be stacked in. In this case, it's vertical. */
@@ -83,8 +83,19 @@ ul, ol {
 }
 
 /* Adds spacing between list elements for a less cluttered overall look. */
+
 li {
     margin: 0.5rem 0 0.5rem 0;
+}
+
+/* Removes unnecessary margins. */
+
+li:first-of-type, .blog_posts p:first-of-type {
+    margin-top: 0;
+}
+
+li:last-of-type, .blog_posts p:last-of-type {
+    margin-bottom: 0;
 }
 
 /* Horizontal divider styling. */
@@ -98,7 +109,7 @@ hr {
 /* Link element styling. */
 
 a {
-    color: #1a1a1a;
+    color: #f1f1f1;
     text-underline-offset: 0.15rem; /* Distance between text and underline. */
     text-decoration-thickness: 0.1rem; /* The underline is the "text-decoration." */
     cursor: pointer; /* What cursor will be used when the user interacts (in this case hovers) over the element. */
@@ -108,8 +119,8 @@ a {
 
 button {
     background: transparent;
-    border: 0.15rem solid #1a1a1a;
-    color: #1a1a1a;
+    border: 0.2rem solid #f1f1f1;
+    color: #f1f1f1;
     padding: 0.5rem 1rem 0.5rem 1rem;
     border-radius: 10rem;
     font-size: 1.1rem;
@@ -119,8 +130,8 @@ button {
 /* What happens when a button is hovered over? */
 
 button:hover {
-    background: #1a1a1a;
-    color: #f1f1f1;
+    background: #f1f1f1;
+    color: #1a1a1a;
 }
 
 /* What happens to any icon images when a button with said icons is hovered over or focused on (clicked, but not redirected)? */
@@ -149,7 +160,7 @@ img {
 
 .icon {
     width: 1.1em;
-    filter: invert(0%) sepia(19%) saturate(6981%) hue-rotate(31deg) brightness(94%) contrast(80%); /* Changes the icon color from black (#000000) to a slightly lighter shade of black (#1a1a1a) for a softer tone. */
+    filter: invert(0%) sepia(19%) saturate(6981%) hue-rotate(31deg) brightness(94%) contrast(80%); /* Changes the icon color from black (#000000) to a slightly lighter shade of black (#f1f1f1) for a softer tone. */
 }
 
 /* Custom image border styling. */
@@ -264,7 +275,8 @@ img {
 /* Navigation bar styling. */
 
 .navbar {
-    border-bottom: 0.1rem solid #1a1a1a;
+    background: #111111;
+    border-bottom: 0.1rem solid #f1f1f1;
 }
 
 /* Styling for all buttons within the navigation bar. */
@@ -285,7 +297,8 @@ img {
 /* Footer styling. */
 
 .footer {
-    background: #1a1a1a;
+    background: #111111;
+    border-top: 0.1rem solid #f1f1f1;
     color: #f1f1f1;
     padding: 2rem 0 2rem 0;
     margin-top: auto; /* Aligns the footer to the bottom of the page even if there is no other content to push it there by default. */
@@ -300,8 +313,8 @@ img {
 /* Responsive navigation menu styling. */
 
 .navbar_menu {
-    background: #f1f1f1;
-    border-bottom: 0.1rem solid #1a1a1a;
+    background: #1a1a1a;
+    border-bottom: 0.1rem solid #f1f1f1;
     padding: 2rem 0 2rem 0;
     margin-top: -0.1rem; /* Moves the element just slightly above its native position to cover up the navigation's border-bottom so that it looks like it just extends it when opened. */
     text-align: center;
@@ -320,30 +333,23 @@ img {
 /* Styling for elements with the "card" class. */
 
 .card {
-    background: #dddddd;
+    background: #111111;
+    color: #f1f1f1;
     padding: 1rem;
     border-radius: 1rem;
     width: 100%;
 }
 
-/* Styling for all buttons within the "card" class elements. */
+/* Giving all <h2> elements that are in the ".card" class a custom font weight (bold). */
 
-.card button {
-    border: 0.15rem solid #f1f1f1;
-    color: #f1f1f1;
-}
-
-/* What happens when the buttons within the "card" class elements are hovered over? */
-
-.card button:hover {
-    background: #f1f1f1;
+.card h2 {
+    font-weight: bold;
 }
 
 /* Defines custom background color and button color while hovered for all "card" class elements with the "blue" ID. */
 
 .card#blue {
     background: #004d99;
-    color: #f1f1f1;
 }
 
 .card#blue button:hover {
@@ -354,7 +360,6 @@ img {
 
 .card#green {
     background: #257425;
-    color: #f1f1f1;
 }
 
 .card#green button:hover {
@@ -365,7 +370,6 @@ img {
 
 .card#magenta {
     background: #99003d;
-    color: #f1f1f1;
 }
 
 .card#magenta button:hover {
@@ -375,7 +379,7 @@ img {
 /* Defines a custom text selection background color for all elements with the "card" class. */
 
 .card#blue ::selection, .card#green ::selection, .card#magenta ::selection {
-    background: #1a1a1a65;
+    background: #1a1a1a85;
 }
 
 /* Added later; thus, this time I used flexbox to define the two columns used in my code preview window (first column = line numbers; second column = code). */
@@ -399,7 +403,7 @@ img {
 /* Styling for the code column within my code preview window. */
 
 .code #code {
-    background: #1a0f0a;
+    background: #150700;
     color: #f1f1f1;
     padding: 1rem;
     border-top-right-radius: 0.5rem; /* Same as before, just this time for the right corner curvatures. */
@@ -422,14 +426,26 @@ img {
 }
 
 .code #code #comment {
-    color: #008000;
+    color: #585858;
 }
 
 /* Defines a custom text selection background color for all elements with the "code" class. */
 
 .code ::selection {
-    background: #f1f1f165;
+    background: #f1f1f185;
     color: #1a1a1a;
+}
+
+/* Adds spacing between blog post links. Helps with visibility. */
+
+.blog_posts p {
+    margin: 0.5rem 0 0.5rem 0;
+}
+
+/* Blog and legal text alignment. */
+
+.blog, .legal {
+    text-align: justify;
 }
 
 /* Media query. Used to dynamically change certain website properties if the condition(s) within the brackets are met. */

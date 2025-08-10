@@ -137,7 +137,7 @@ button:hover {
 /* What happens to any icon images when a button with said icons is hovered over or focused on (clicked, but not redirected)? */
 
 button:hover .icon, button:focus .icon {
-    filter: invert(100%) sepia(42%) saturate(176%) hue-rotate(279deg) brightness(113%) contrast(89%); /* Used a CSS Filter Generator (https://codepen.io/sosuke/pen/Pjoqqp) to change the color of an icon without making a bunch of different versions of the same icon. Good for saving storage and reducing loading times. It's also easier to implement. */
+    filter: invert(0%) sepia(19%) saturate(6981%) hue-rotate(31deg) brightness(94%) contrast(80%); /* Used a CSS Filter Generator (https://codepen.io/sosuke/pen/Pjoqqp) to change the color of an icon without making a bunch of different versions of the same icon. Good for saving storage and reducing loading times. It's also easier to implement. */
 }
 
 /* Button and footer links styling. */
@@ -160,7 +160,7 @@ img {
 
 .icon {
     width: 1.1em;
-    filter: invert(0%) sepia(19%) saturate(6981%) hue-rotate(31deg) brightness(94%) contrast(80%); /* Changes the icon color from black (#000000) to a slightly lighter shade of black (#f1f1f1) for a softer tone. */
+    filter: invert(100%) sepia(42%) saturate(176%) hue-rotate(279deg) brightness(113%) contrast(89%); /* Changes the icon color from black (#000000) to a slightly lighter shade of white (#f1f1f1) for a softer tone. */
 }
 
 /* Custom image border styling. */

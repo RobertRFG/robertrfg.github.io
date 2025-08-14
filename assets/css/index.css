@@ -16,8 +16,8 @@ GENERAL NOTES:
 /* Custom font. */
 
 @font-face {
-    font-family: "bvp"; /* Declaring custom font family name. "BVP" is short for "Be Vietnam Pro." */
-    src: url("../../assets/fnt/be_vietnam_pro.ttf"); /* Pulls the .ttf font file from my assets directory. */
+    font-family: "rs"; /* Declaring custom font family name. "RS" is short for "Roboto Slab." */
+    src: url("../../assets/fnt/r_slab.ttf"); /* Pulls the .ttf font file from my assets directory. */
 }
 
 /* Custom text selection. */
@@ -33,7 +33,7 @@ GENERAL NOTES:
     padding: 0;
     margin: 0;
     box-sizing: border-box; /* Allows the element's padding and border to be included in its width and height. */
-    font-family: "bvp"; /* Applies the custom font family from "@font-face". */
+    font-family: "rs"; /* Applies the custom font family from "@font-face". */
     font-weight: normal; /* Headers are, by default, bold. This line makes sure that all text, including headers, isn't bolded. */
     scroll-behavior: smooth; /* Makes sure that automatic scrolling, like anchor points, is smooth instead of snappy. */
 }

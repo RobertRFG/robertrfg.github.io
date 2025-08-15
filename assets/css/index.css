@@ -7,9 +7,6 @@ GENERAL NOTES:
 - I use "rem" instead of "px," as that is a more responsive-friendly measurement unit.
 - "Native" either refers to the desktop view of the website or the default value/look/property/etc., while "responsive" refers to, well, the responsive view.
 - Comments serve more as bookmarks or "folders" than code explanations.
-- Definitions may not be 100% textbook accurate; rather, they're mostly "accurate enough." Again, bookmarks > explanations.
-- All code was written by me (@rndm_furry_guy on YouTube & X) with EXTREMELY minor help from Claude.ai.
-- The target audience is me and potentially someone who wants to figure out the general functionality of this code (not specifically learn the code or CSS).
 
 */
 
@@ -23,7 +20,7 @@ GENERAL NOTES:
 /* Custom text selection. */
 
 ::selection {
-    background: #99003d65;
+    background: #25742565;
     color: inherit; /* Prevents changing the selected text color when that text is, well, selected. */
 }
 
@@ -48,12 +45,6 @@ body {
     flex-direction: column; /* Defines in which direction (horizontal or vertical) the elements will be stacked in. In this case, it's vertical. */
 }
 
-/* Sets native bold element value. */
-
-b {
-    font-weight: bold; /* In the "*" I negated the bold styling for all elements. Here, I enforce it strictly for the <b> element. */
-}
-
 /* Sets the header, paragraph, and list elements ("ul" and "ol") font sizes. */
 
 h1 {
@@ -72,10 +63,6 @@ p, ul, ol {
     font-size: 1.2rem;
 }
 
-h4 {
-    font-size: 1rem;
-}
-
 /* Sets the left margin of both list elements ("ul" and "ol"). */
 
 ul, ol {
@@ -90,11 +77,11 @@ li {
 
 /* Removes unnecessary margins. */
 
-li:first-of-type, .blog_posts p:first-of-type {
+li:first-of-type {
     margin-top: 0;
 }
 
-li:last-of-type, .blog_posts p:last-of-type {
+li:last-of-type {
     margin-bottom: 0;
 }
 
@@ -109,10 +96,14 @@ hr {
 /* Link element styling. */
 
 a {
-    color: #f1f1f1;
+    color: #a5a5a5;
     text-underline-offset: 0.15rem; /* Distance between text and underline. */
     text-decoration-thickness: 0.1rem; /* The underline is the "text-decoration." */
     cursor: pointer; /* What cursor will be used when the user interacts (in this case hovers) over the element. */
+}
+
+a:hover {
+    color: #f1f1f1;
 }
 
 /* Button element styling. */
@@ -127,22 +118,15 @@ button {
     cursor: pointer;
 }
 
-/* What happens when a button is hovered over? */
+/* What happens when a button or footer link is hovered over? */
 
-button:hover {
-    background: #f1f1f1;
-    color: #1a1a1a;
-}
-
-/* What happens to any icon images when a button with said icons is hovered over or focused on (clicked, but not redirected)? */
-
-button:hover .icon, button:focus .icon {
-    filter: invert(0%) sepia(19%) saturate(6981%) hue-rotate(31deg) brightness(94%) contrast(80%); /* Used a CSS Filter Generator (https://codepen.io/sosuke/pen/Pjoqqp) to change the color of an icon without making a bunch of different versions of the same icon. Good for saving storage and reducing loading times. It's also easier to implement. */
+button:hover, .footer a:hover {
+    color: #0080ff;
 }
 
 /* Button and footer links styling. */
 
-button a, button a:hover, .footer a, .footer a:hover {
+button a, button a:hover, .footer a {
     color: inherit;
     text-decoration: none;
 }
@@ -160,7 +144,7 @@ img {
 
 .icon {
     width: 1.1em;
-    filter: invert(100%) sepia(42%) saturate(176%) hue-rotate(279deg) brightness(113%) contrast(89%); /* Changes the icon color from black (#000000) to a slightly lighter shade of white (#f1f1f1) for a softer tone. */
+    filter: invert(100%) sepia(2%) saturate(410%) hue-rotate(197deg) brightness(116%) contrast(89%); /* Changes the icon color from black (#000000) to a slightly lighter shade of white (#f1f1f1) for a softer tone. */
 }
 
 /* Custom image border styling. */
@@ -220,7 +204,7 @@ img {
 /* Centers and restricts website content. Good for readability. */
 
 .container {
-    width: 80%;
+    width: 70%;
     margin: auto; /* Positions the element to the center. */
 }
 
@@ -245,6 +229,18 @@ img {
     float: left;
 }
 
+/* Removes pointless spacing. */
+
+.col33:first-of-type {
+    padding-left: 0;
+}
+
+.col33:last-of-type {
+    padding-right: 0;
+}
+
+/* End */
+
 .col50 {
     width: 50%; /* 1/2 of the page. */
     float: left;
@@ -255,11 +251,10 @@ img {
     float: left;
 }
 
-/* Sets parent column widths and floats. */
-
 .col100 {
     width: 100%;
     float: left;
+    margin: 2.5rem 0 0 0;
 }
 
 /* Allows assigning "center" or "right" classes to elements. Alternative to writing "style="text-align: center/right;" in HTML. */
@@ -276,7 +271,7 @@ img {
 
 .navbar {
     background: #111111;
-    border-bottom: 0.1rem solid #f1f1f1;
+    border-bottom: 0.1rem solid #585858;
 }
 
 /* Styling for all buttons within the navigation bar. */
@@ -298,7 +293,7 @@ img {
 
 .footer {
     background: #111111;
-    border-top: 0.1rem solid #f1f1f1;
+    border-top: 0.1rem solid #585858;
     color: #f1f1f1;
     padding: 2rem 0 2rem 0;
     margin-top: auto; /* Aligns the footer to the bottom of the page even if there is no other content to push it there by default. */
@@ -314,7 +309,7 @@ img {
 
 .navbar_menu {
     background: #1a1a1a;
-    border-bottom: 0.1rem solid #f1f1f1;
+    border-bottom: 0.1rem solid #585858;
     padding: 2rem 0 2rem 0;
     margin-top: -0.1rem; /* Moves the element just slightly above its native position to cover up the navigation's border-bottom so that it looks like it just extends it when opened. */
     text-align: center;
@@ -340,12 +335,6 @@ img {
     width: 100%;
 }
 
-/* Giving all <h2> elements that are in the ".card" class a custom font weight (bold). */
-
-.card h2 {
-    font-weight: bold;
-}
-
 /* Defines custom background color and button color while hovered for all "card" class elements with the "blue" ID. */
 
 .card#blue {
@@ -353,6 +342,7 @@ img {
 }
 
 .card#blue button:hover {
+    background: #f1f1f1;
     color: #004d99;
 }
 
@@ -363,6 +353,7 @@ img {
 }
 
 .card#green button:hover {
+    background: #f1f1f1;
     color: #257425;
 }
 
@@ -373,6 +364,7 @@ img {
 }
 
 .card#magenta button:hover {
+    background: #f1f1f1;
     color: #99003d;
 }
 
@@ -382,70 +374,20 @@ img {
     background: #1a1a1a85;
 }
 
-/* Added later; thus, this time I used flexbox to define the two columns used in my code preview window (first column = line numbers; second column = code). */
+/* Legal text alignment. */
 
-.code {
-    display: flex;
-}
-
-/* Styling for the line numbers column within my code preview window. */
-
-.code #line {
-    background: #004d99;
-    color: #f1f1f1;
-    padding: 1rem;
-    border-top-left-radius: 0.5rem; /* Changes the border-radius (corner curvature) specifically for the top left corner. */
-    border-bottom-left-radius: 0.5rem; /* Changes the border-radius (corner curvature) specifically for the bottom left corner. */
-    width: 5%;
-    text-align: center;
-}
-
-/* Styling for the code column within my code preview window. */
-
-.code #code {
-    background: #150700;
-    color: #f1f1f1;
-    padding: 1rem;
-    border-top-right-radius: 0.5rem; /* Same as before, just this time for the right corner curvatures. */
-    border-bottom-right-radius: 0.5rem; /* Same as before, just this time for the right corner curvatures. */
-    width: 95%;
-}
-
-/* Code preview window color coding. */
-
-.code #code #el {
-    color: #0080ff;
-}
-
-.code #code #div {
-    color: #e68a00;
-}
-
-.code #code #id {
-    color: #ff3377;
-}
-
-.code #code #comment {
-    color: #585858;
-}
-
-/* Defines a custom text selection background color for all elements with the "code" class. */
-
-.code ::selection {
-    background: #f1f1f185;
-    color: #1a1a1a;
-}
-
-/* Adds spacing between blog post links. Helps with visibility. */
-
-.blog_posts p {
-    margin: 0.5rem 0 0.5rem 0;
-}
-
-/* Blog and legal text alignment. */
-
-.blog, .legal {
+.legal {
     text-align: justify;
+}
+
+/* Sup and sub Text Styling */
+
+#sup_txt {
+    color: #257425;
+}
+
+#sub_txt {
+    color: #585858;
 }
 
 /* Media query. Used to dynamically change certain website properties if the condition(s) within the brackets are met. */
@@ -469,21 +411,26 @@ img {
     h3 {
         font-size: 1.4rem;
     }
-    p, ul, ol {
-        font-size: 1rem;
-    }
     /* Ensures that all "image_frame" class elements, as well as columns, take up the maximum available page width. */
     .image_frame, .image_frame#small, .col25, .col33, .col50, .col75 {
         width: 100%;
     }
-    /* Slightly expands the "container" class to allow more text per line. Also, defines the new "code" ID element width. */
-    .container, .code #code {
+    /* Slightly expands the "container" class to allow more text per line. */
+    .container {
         width: 90%;
     }
     /* Switched from left-and-right to top-and-bottom padding so the 33% columns are properly divided regardless of how they're stacked (horizontally or vertically). */
     .col33 {
         padding: 0.5rem 0 0.5rem 0;
     }
+    /* Removes pointless spacing. */
+    .col33:first-of-type {
+        padding-top: 0;
+    }
+    .col33:last-of-type {
+        padding-bottom: 0;
+    }
+    /* End */
     /* Defines specific width for all 25% columns within the navigation bar ("navbar" class). */
     .navbar .col25 {
         width: 25%;
@@ -491,9 +438,5 @@ img {
     /* Defines specific width for all 75% columns within the navigation bar ("navbar" class). */
     .navbar .col75 {
         width: 75%;
-    }
-    /* Adjusts the line numbers column to be compatible with the responsive 90% code column width. */
-    .code #line {
-        width: 10%;
     }
 }

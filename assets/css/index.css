@@ -204,7 +204,7 @@ img {
 /* Centers and restricts website content. Good for readability. */
 
 .container {
-    width: 70%;
+    width: 72%;
     margin: auto; /* Positions the element to the center. */
 }
 
@@ -330,7 +330,7 @@ img {
 .card {
     background: #111111;
     color: #f1f1f1;
-    padding: 1rem;
+    padding: 2rem;
     border-radius: 1rem;
     width: 100%;
 }
@@ -339,6 +339,7 @@ img {
 
 .card#blue {
     background: #004d99;
+    padding: 1rem;
 }
 
 .card#blue button:hover {
@@ -350,6 +351,7 @@ img {
 
 .card#green {
     background: #257425;
+    padding: 1rem;
 }
 
 .card#green button:hover {
@@ -361,6 +363,7 @@ img {
 
 .card#magenta {
     background: #99003d;
+    padding: 1rem;
 }
 
 .card#magenta button:hover {

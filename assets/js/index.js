@@ -11,3 +11,7 @@ button.addEventListener('click', (e) => { // Waits for the user to press the men
 document.addEventListener('click', () => { // Waits for the user to press anything other than the menu button.
     menu.style.display = 'none'; // Changes the "display" value of the navigation menu to "none" (hidden) once the event listener is triggered.
 });
+
+function copyText(text) { // Creates a function called "copyText" and links it to whatever value is within the brackets ("text").
+    navigator.clipboard.writeText(text); // Copies whatever is "text" to the user's clipboard.
+} // Outdated, I know, but if it ain't broken, don't fix it.

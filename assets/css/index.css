@@ -20,8 +20,8 @@ GENERAL NOTES:
 /* Custom text selection. */
 
 ::selection {
-    background: #25742565;
-    color: inherit; /* Prevents changing the selected text color when that text is, well, selected. */
+    background: #ffff2985;
+    color: #1a1a1a;
 }
 
 /* Default website properties. */
@@ -121,7 +121,7 @@ button {
 /* What happens when a button or footer link is hovered over? */
 
 button:hover, .footer a:hover {
-    color: #0080ff;
+    color: #ffff29;
 }
 
 /* Button and footer links styling. */
@@ -375,6 +375,7 @@ img {
 
 .card#blue ::selection, .card#green ::selection, .card#magenta ::selection {
     background: #1a1a1a85;
+    color: #f1f1f1;
 }
 
 /* Legal text alignment. */
@@ -386,7 +387,7 @@ img {
 /* Sup and sub Text Styling */
 
 #sup_txt {
-    color: #257425;
+    color: #ffff29;
 }
 
 #sub_txt {
